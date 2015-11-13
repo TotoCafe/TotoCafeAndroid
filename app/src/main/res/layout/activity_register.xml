@@ -29,12 +29,11 @@
     <!-- BirthDate -->
     <TextView
         android:layout_width="wrap_content"
-        android:text="Birth Date"
+        android:text="Age"
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/etBirthDate"
-        android:inputType="date"
+        android:id="@+id/etAge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

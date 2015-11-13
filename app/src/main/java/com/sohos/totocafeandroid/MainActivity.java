@@ -10,7 +10,7 @@ import android.widget.*;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     Button btnLogout;
     EditText etName, etSurname ,etUsername ;
-
+    UserLocalStore userLocalStore;
 
 //  private Handler mHandler = new Handler();
     //Intent i = new Intent(MainActivity.this,Login.class);
@@ -33,13 +33,45 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnLogout = (Button) findViewById(R.id.btnLogout);
         btnLogout.setOnClickListener(this);
 
+        userLocalStore = new UserLocalStore(this);
+    }
+
+
+    @Override
+    protected  void onStart(){
+        super.onStart();
+
+        if(authenticate() == true){
+            displayUserDetails();
+        }
+        else{
+            startActivity(new Intent(MainActivity.this, Login.class));
+        }
+    }
+
+    private  boolean authenticate(){
+        return userLocalStore.getUserLoggedIn();
+    }
+
+    private void displayUserDetails(){
+        User user = userLocalStore.getLoggedInUser();
+
+        etUsername.setText(user.name);
+        etSurname.setText(user.surname);
+        etUsername.setText(user.username);
+
+
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnLogout:
+                userLocalStore.clearUserDate();
+                userLocalStore.setUserLoggedIn(false);
+
                 startActivity(new Intent(this, Login.class));
+
                 break;
         }
     }
