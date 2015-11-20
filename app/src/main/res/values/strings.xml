@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">TotoCafeAndroid</string>
     <string name="facebook_app_id">1659743474274718</string>
+    <string name="login">Login</string>
+    <string name="username">Username :</string>
+    <string name="password">Password :</string>
+    <string name="user_details">User Details</string>
+    <string name="firstname">First Name:</string>
+    <string name="lastname">Last Name:</string>
+    <string name="title_activity_create_user">CreateUserActivity</string>
+    <string name="create_user_account">Create User Account</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+
 </resources>
