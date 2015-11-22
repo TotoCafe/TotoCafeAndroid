@@ -2,6 +2,14 @@
     <string name="app_name">TotoCafeAndroid</string>
     <string name="facebook_app_id">1659743474274718</string>
     <string name="login">Login</string>
+    <string name="name">Name :</string>
+    <string name="surname">Surname :</string>
+    <string name="birthDate">Birth Date :</string>
+    <string name="email">Email :</string>
+    <string name="Male">Male</string>
+    <string name="Female">Female</string>
+
+    <string name="gender">Gender :</string>
     <string name="username">Username :</string>
     <string name="password">Password :</string>
     <string name="user_details">User Details</string>
@@ -11,5 +19,8 @@
     <string name="create_user_account">Create User Account</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_home">HomeActivity</string>
 
 </resources>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_register"
+    tools:context="com.sohos.totocafeandroid.RegisterActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:id="@+id/tvBaslik"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvBaslik"
+        android:layout_marginTop="10dp"
+        android:text="@string/name"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_name"
+        android:layout_below="@+id/tv_name"
+        android:layout_marginTop="6dp"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/tv_surname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/surname"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_below="@+id/et_name"
+        android:layout_alignLeft="@+id/et_name"
+        android:layout_alignStart="@+id/et_name" />
+
+    <EditText
+        android:id="@+id/et_surname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_below="@+id/tv_surname"
+        android:layout_alignLeft="@+id/tv_surname"
+        android:layout_alignStart="@+id/tv_surname">
+
+        <requestFocus />
+    </EditText>
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_below="@+id/et_surname"
+        android:layout_alignLeft="@+id/et_name"
+        android:layout_alignStart="@+id/et_name" />
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_below="@+id/tv_email"
+
+        android:layout_alignLeft="@+id/tv_surname"
+        android:layout_alignStart="@+id/tv_surname">
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/tv_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/password"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_below="@+id/et_email"
+        android:layout_alignLeft="@+id/et_name"
+        android:layout_alignStart="@+id/et_name" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_below="@+id/tv_password"
+        android:inputType="textPassword"
+        android:layout_alignLeft="@+id/tv_surname"
+        android:layout_alignStart="@+id/tv_surname">
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/tv_birthdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/birthDate"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_below="@+id/et_password"
+        android:layout_alignLeft="@+id/et_name"
+        android:layout_alignStart="@+id/et_name" />
+
+    <EditText
+        android:id="@+id/et_birthDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="13"
+        android:layout_below="@+id/tv_birthdate"
+        android:hint="Touch here to select a date"
+        android:layout_alignLeft="@+id/tv_surname"
+        android:layout_alignStart="@+id/tv_surname">
+
+        <requestFocus />
+    </EditText>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_birthDate"
+        android:orientation="horizontal"
+        android:id="@+id/RadioGroupGender"
+        android:checkedButton="@+id/sound" >
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rbMale"
+            android:text="@string/Male" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rbFemale"
+            android:text="@string/Female" />
+
+    </RadioGroup>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:id="@+id/btn_Register"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/tvBaslik"
+        android:layout_alignEnd="@+id/tvBaslik"
+        android:layout_marginBottom="53dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Date"
+        android:id="@+id/btnDate"
+        android:layout_alignTop="@+id/btn_Register"
+        android:layout_toRightOf="@+id/et_password"
+        android:layout_toEndOf="@+id/et_password" />
+
+
+</RelativeLayout>

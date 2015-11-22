@@ -100,7 +100,7 @@ public class RestAPI {
 		return finalValue;
 	}
 
-    public JSONObject CreateNewUser(String Name,String Surname,String Email,String Password,Date BirthDate,double GenderID) throws Exception {
+    public JSONObject CreateNewUser(String Name,String Surname,String Email,String Password,String BirthDate,double GenderID) throws Exception {
         JSONObject result = null;
         JSONObject o = new JSONObject();
         JSONObject p = new JSONObject();

@@ -12,30 +12,30 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="33dp"
         android:text="@string/login"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/email"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginTop="38dp"
         android:layout_below="@+id/textView1"
-        android:layout_marginTop="20dp"
-        android:layout_toLeftOf="@+id/textView1"
-        android:text="@string/username"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3" />
 
     <EditText
-        android:id="@+id/et_username"
+        android:id="@+id/et_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="10dp"
-        android:ems="10" >
+        android:ems="10"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_toRightOf="@+id/textView3"
+        android:layout_toEndOf="@+id/textView3">
 
         <requestFocus />
     </EditText>
@@ -44,30 +44,32 @@
         android:id="@+id/et_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_below="@+id/textView3"
-        android:layout_marginTop="12dp"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignLeft="@+id/et_email"
+        android:layout_alignStart="@+id/et_email" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/textView2"
-        android:layout_below="@+id/et_username"
-        android:layout_marginTop="20dp"
         android:text="@string/password"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginTop="34dp"
+        android:layout_below="@+id/textView2"
+        android:layout_toLeftOf="@+id/btn_FacebookLogin"
+        android:layout_toStartOf="@+id/btn_FacebookLogin" />
 
     <Button
         android:id="@+id/btn_Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_password"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="@string/login" />
+        android:text="@string/login"
+        android:layout_marginTop="54dp"
+        android:layout_below="@+id/et_email"
+        android:layout_toLeftOf="@+id/textView1"
+        android:layout_toStartOf="@+id/textView1" />
 
     <Button
         android:layout_width="wrap_content"
@@ -76,19 +78,26 @@
         android:id="@+id/btn_FacebookLogin"
         android:layout_below="@+id/btn_Login"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="41dp" />
+        android:layout_marginTop="34dp" />
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ananymous Login"
-        android:id="@+id/tv_AnonymousLogin"
-        android:textSize="20dp"
-        android:layout_marginTop="32dp"
+        android:text="Go Register"
+        android:id="@+id/btn_Register"
+        android:layout_alignTop="@+id/btn_Login"
+        android:layout_toRightOf="@+id/textView1"
+        android:layout_toEndOf="@+id/textView1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Anonymous Login"
+        android:id="@+id/btn_Anonymous"
         android:layout_below="@+id/btn_FacebookLogin"
         android:layout_alignLeft="@+id/btn_FacebookLogin"
-        android:layout_alignStart="@+id/btn_FacebookLogin" />
-
+        android:layout_alignStart="@+id/btn_FacebookLogin"
+        android:layout_marginTop="51dp" />
 
 
 </RelativeLayout>
