@@ -39,8 +39,8 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        // Show the Up button in the action bar.
-        setupActionBar();
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         // Initialize  the layout components
         context=this;
@@ -54,11 +54,11 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
 
-                String username=etEmail.getText().toString();
+                String email=etEmail.getText().toString();
                 String password=etPassword.getText().toString();
 
                 // Execute the AsyncLogin class
-                new AsyncLogin().execute(username,password);
+                new AsyncLogin().execute(email,password);
 
             }
         });
@@ -93,11 +93,11 @@ public class LoginActivity extends AppCompatActivity {
                 //Parse the JSON Object to boolean
                 JSONParser parser = new JSONParser();
                 userAuth = parser.parseUserAuth(jsonObj);
+
                 userName=params[0];
             } catch (Exception e) {
                 // TODO Auto-generated catch block
                 Log.d("AsyncLogin", e.getMessage());
-
             }
             return userAuth;
         }
@@ -170,6 +170,7 @@ public class LoginActivity extends AppCompatActivity {
 
             //Check user validity
             if (result) { //Result --> Git Login Yap
+                Toast.makeText(context, "Anonymous Login...",Toast.LENGTH_SHORT).show();
 
                 Intent i = new Intent(LoginActivity.this,
                         HomeActivity.class);
@@ -178,6 +179,8 @@ public class LoginActivity extends AppCompatActivity {
             }
             else // İLK kez giriş. Register yap.
             {
+                Toast.makeText(context, "Anonymous Registration...",Toast.LENGTH_SHORT).show();
+
                 new AsyncAnonymousRegister().execute(android_id);
             }
 
@@ -217,16 +220,6 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-
-    /**
-     * Set up the {@link android.app.ActionBar}, if the API is available.
-     */
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    private void setupActionBar() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            getActionBar().setDisplayHomeAsUpEnabled(true);
-        }
-    }
 
 
 

@@ -33,9 +33,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_toRightOf="@+id/textView3"
-        android:layout_toEndOf="@+id/textView3">
+        android:layout_above="@+id/textView3"
+        android:layout_alignLeft="@+id/et_password"
+        android:layout_alignStart="@+id/et_password">
 
         <requestFocus />
     </EditText>
@@ -46,9 +46,9 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_alignLeft="@+id/et_email"
-        android:layout_alignStart="@+id/et_email" />
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_toRightOf="@+id/textView3"
+        android:layout_toEndOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/textView3"
@@ -66,19 +66,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login"
-        android:layout_marginTop="54dp"
-        android:layout_below="@+id/et_email"
-        android:layout_toLeftOf="@+id/textView1"
-        android:layout_toStartOf="@+id/textView1" />
+        android:layout_below="@+id/et_password"
+        android:layout_toRightOf="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2"
+        android:layout_marginTop="46dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Facebook Login"
         android:id="@+id/btn_FacebookLogin"
-        android:layout_below="@+id/btn_Login"
+        android:layout_below="@+id/et_password"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="34dp" />
+        android:layout_marginTop="152dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -86,8 +86,8 @@
         android:text="Go Register"
         android:id="@+id/btn_Register"
         android:layout_alignTop="@+id/btn_Login"
-        android:layout_toRightOf="@+id/textView1"
-        android:layout_toEndOf="@+id/textView1" />
+        android:layout_alignRight="@+id/et_password"
+        android:layout_alignEnd="@+id/et_password" />
 
     <Button
         android:layout_width="wrap_content"
