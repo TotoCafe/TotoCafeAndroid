@@ -10,6 +10,9 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
     Button btnLogin,btnRegister;
@@ -20,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-       // Intent intent = new Intent(this, LoginActivity.class);
+        // Intent intent = new Intent(this, LoginActivity.class);
         //startActivity(intent);
         btnLogin = (Button) findViewById(R.id.btnLogin);
         btnRegister = (Button) findViewById(R.id.btnRegister);
@@ -40,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-    }
 
-}
+
+        
+    }
+    }
