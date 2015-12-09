@@ -261,6 +261,66 @@ public class RestAPI {
         return result;
     }
 
+    public JSONObject CheckAvailabilityOfTable(double TableID) throws Exception {
+        JSONObject result = null;
+        JSONObject o = new JSONObject();
+        JSONObject p = new JSONObject();
+        o.put("interface","RestAPI");
+        o.put("method", "CheckAvailabilityOfTable");
+        p.put("TableID",mapObject(TableID));
+        o.put("parameters", p);
+        String s = o.toString();
+        String r = load(s);
+        result = new JSONObject(r);
+        return result;
+    }
+
+    public JSONObject CheckTableControllerIsExist(double TableID) throws Exception {
+        JSONObject result = null;
+        JSONObject o = new JSONObject();
+        JSONObject p = new JSONObject();
+        o.put("interface","RestAPI");
+        o.put("method", "CheckTableControllerIsExist");
+        p.put("TableID",mapObject(TableID));
+        o.put("parameters", p);
+        String s = o.toString();
+        String r = load(s);
+        result = new JSONObject(r);
+        return result;
+    }
+
+    public JSONObject InsertRequestTableViaQr(double UserID,double CompanyID,double TableID) throws Exception {
+        JSONObject result = null;
+        JSONObject o = new JSONObject();
+        JSONObject p = new JSONObject();
+        o.put("interface","RestAPI");
+        o.put("method", "InsertRequestTableViaQr");
+        p.put("UserID",mapObject(UserID));
+        p.put("CompanyID",mapObject(CompanyID));
+        p.put("TableID",mapObject(TableID));
+        o.put("parameters", p);
+        String s = o.toString();
+        String r = load(s);
+        result = new JSONObject(r);
+        return result;
+    }
+
+    public JSONObject CheckRequestTableFlag(double UserID,double CompanyID,double TableID) throws Exception {
+        JSONObject result = null;
+        JSONObject o = new JSONObject();
+        JSONObject p = new JSONObject();
+        o.put("interface","RestAPI");
+        o.put("method", "CheckRequestTableFlag");
+        p.put("UserID",mapObject(UserID));
+        p.put("CompanyID",mapObject(CompanyID));
+        p.put("TableID",mapObject(TableID));
+        o.put("parameters", p);
+        String s = o.toString();
+        String r = load(s);
+        result = new JSONObject(r);
+        return result;
+    }
+
 }
 
 
