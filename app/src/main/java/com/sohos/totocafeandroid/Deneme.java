@@ -27,6 +27,7 @@ public class Deneme extends AppCompatActivity implements ContactsListFragment.On
     public static double TableID = 0;
     public static double CompanyID = 0;
     public static double UserID =  1; //ŞİMDİLİK 1 , daha sonra doğrusu çekilecek.
+    public static QrRequestTable qrRequestTable;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -193,7 +194,7 @@ public class Deneme extends AppCompatActivity implements ContactsListFragment.On
                 Toast.makeText(context, "Masa Boş, sırada InsertRequestTableViaQr işlemi var!",Toast.LENGTH_SHORT).show();
                 //UserID daha sonra Eklenecek. Default = 1 şuan!
                 Log.d("QRCODEbeforeInsertRequest", UserID + "," + CompanyID + "," + TableID);
-                QrRequestTable qrRequestTable = new QrRequestTable(UserID,CompanyID,TableID);
+                qrRequestTable = new QrRequestTable(UserID,CompanyID,TableID);
                 new AsyncInsertRequestTableViaQr().execute(qrRequestTable);
 
             }
@@ -214,9 +215,7 @@ public class Deneme extends AppCompatActivity implements ContactsListFragment.On
 
             RestAPI api = new RestAPI();
             try {
-
                 api.InsertRequestTableViaQr(params[0].getUserID(),params[0].getCompanyID(),params[0].getTableID());
-
             } catch (Exception e) {
                 // TODO Auto-generated catch block
                 Log.d("AsyncInsertRequestTableViaQr", e.getMessage());
@@ -233,7 +232,7 @@ public class Deneme extends AppCompatActivity implements ContactsListFragment.On
             //startActivity(i);
 
             //ARTIK SERVER tarafından masa onayı beklendiği için son check Request işlemi kaldı
-            QrRequestTable qrRequestTable = new QrRequestTable(UserID,CompanyID,TableID);
+            // QrRequestTable qrReqTable = new QrRequestTable(UserID,CompanyID,TableID);
             new AsyncCheckRequestTableFlag().execute(qrRequestTable);
         }
 
@@ -286,7 +285,11 @@ public class Deneme extends AppCompatActivity implements ContactsListFragment.On
            if(result){ // result is true! Response is receiving from server!!
                //Intent i = new Intent(context, HomeActivity.class);
                //startActivity(i);
-
+               Toast.makeText(context, "TRUE DÖNDÜ YEEAH!" , Toast.LENGTH_LONG).show();
+           }
+            else{
+                Toast.makeText(context, "FALSE DÖNDÜ :S " , Toast.LENGTH_LONG).show();
+               new AsyncCheckRequestTableFlag().execute(qrRequestTable);
            }
         }
     }
