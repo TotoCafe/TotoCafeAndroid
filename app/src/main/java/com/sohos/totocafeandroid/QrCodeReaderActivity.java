@@ -50,5 +50,9 @@ public class QrCodeReaderActivity extends AppCompatActivity  implements ZXingSca
         Intent i = new Intent(QrCodeReaderActivity.this, Deneme.class ); // Simdilik Deneme
         i.putExtra("qr",rawResult.getText());
         startActivity(i);
+
     }
+
+
+
 }

@@ -1,6 +1,8 @@
 package com.sohos.totocafeandroid;
 
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.sax.StartElementListener;
 import android.support.design.widget.FloatingActionButton;
@@ -11,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -22,7 +25,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+		/*
+		//check network connection 
+        ConnectivityManager cManager = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
+		NetworkInfo nInfo = cManager.getActiveNetworkInfo();
+		if(nInfo!= null && nInfo.isConnected())
+		{
+			Toast.makeText(this, "Network is available :D", Toast.LENGTH_LONG).show();
+		}
+		else
+		{
+			Toast.makeText(this,"Network is not available!", Toast.LENGTH_LONG).show();
 
+		}
+		*/
         // Intent intent = new Intent(this, LoginActivity.class);
         //startActivity(intent);
         btnLogin = (Button) findViewById(R.id.btnLogin);
