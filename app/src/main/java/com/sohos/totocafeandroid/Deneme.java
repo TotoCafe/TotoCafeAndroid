@@ -227,7 +227,7 @@ public class Deneme extends AppCompatActivity implements ContactsListFragment.On
 
         @Override
         protected void onPostExecute(Void result) {
-            Log.d("Result on the INSERT REQUEST TABLE", result.toString());
+            //Log.d("Result on the INSERT REQUEST TABLE", result.toString());
             Toast.makeText(context , "Insert Request Table Via Qr - BAŞARILI!! " , Toast.LENGTH_SHORT).show();
             //Intent i = new Intent(RegisterActivity.this, HomeActivity.class);
             //startActivity(i);
